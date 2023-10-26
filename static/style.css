@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400;500;600;700&family=Lato:wght@300;400&family=Poppins:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', cursive;
+    font-weight: 400;
+}
+
+:root{
+    --primary-color:#000;
+    --secondary-color: rgb(24,188,156);
+}
+
+.navbar1{
+    width: 100%;
+    background-color: rgb(0,174,173);
+    padding: 20px 10px;
+    position: sticky;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar1 .title span{
+    color: var(--secondary-color);
+}
+.navbar1 .title{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.navbar2, .side-bar{
+    display: none;
+}
+
+.navbar1 .links ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.navbar1 .links ul li{
+    list-style: none;
+}
+
+.navbar1 .links ul li a{
+    margin: auto 20px;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    font-weight: 500;
+    color: #fff;
+}
+
+.navbar1 .links ul li a:hover{
+    /* color: var(--secondary-color); */
+    color: #000;
+}
+
+.navbar1 .links ul li a:hover::after{
+    content: '';
+    position: absolute;
+    width: 70%;
+    left: 15%;
+    bottom: -5px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 10px;
+    animation: anim  0.3s linear forwards;
+}
+
+@keyframes anim{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 70%;
+    }
+}
+
+footer .footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 30px;
+    background-color: rgb(0,174,173);
+    color: #fff;
+}
+
+.info h4{
+    text-align: center;
+    /* color: var(--secondary-color); */
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.info ul{
+    margin-left: -10px;
+}
+
+.info ul li{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.social ul{
+    display: flex;
+    align-items: center;
+}
+
+.social ul li{
+    list-style-type: none;
+}
+
+.social ul li a{
+    color: #fff;
+    font-size: 25px;
+    margin: 0px 15px;
+}
+
+.social .fa-brands.fa-instagram:hover{
+    color: rgb(246,2,201);
+    text-shadow: 0px 0px 26px rgb(246,2,201);
+    transform: scale(1.1);
+}
+
+.social .fa-brands.fa-linkedin:hover{
+    color: rgb(0,119,181);
+    text-shadow: 0px 0px 26px rgb(0,119,181);
+    transform: scale(1.1);
+}
+
+.social .fa-brands.fa-facebook:hover{
+    color: rgb(72,103,170);
+    text-shadow: 0px 0px 26px rgb(72,103,170);
+    transform: scale(1.1);
+}
+
+.social .fa-brands.fa-twitter:hover{
+    color: rgb(29,161,242);
+    text-shadow: 0px 0px 26px rgb(29,161,242);
+    transform: scale(1.1);
+}
+
+section{
+    width: 80%;
+    border: 1px solid black;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #000;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.content h2{
+    font-size: 40px;
+    margin: 20px 0px;
+    color: var(--secondary-color);
+}
+
+.content p{
+    font-size: 20px;
+    margin: 20px 0px;
+}
+
+.content h6{
+    font-size: 20px;
+    margin: 30px 0px;
+    font-weight: 700;
+}
+
+.content form{
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0px;
+}
+
+.content form textarea{
+    min-height: 200px;
+    padding: 20px;
+    font-size: 20px;
+    outline: none;
+    border-radius: 10px;
+    width: 80%;
+    margin: 0px auto;
+    border: 0;
+    border-bottom: 2px solid #000;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.content form textarea:focus{
+    border-bottom: 2px solid var(--secondary-color);
+    box-shadow: 0px 0px 10px var(--secondary-color);
+}
+
+.content form button{
+    width: 200px;
+    margin: 40px auto 0px auto;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: #fff;
+    outline: none;
+    border: 0;
+    border-radius: 30px;
+    transition: 0.3s ease-in-out;
+}
+
+.content form button:hover{
+    background-color: #fff;
+    color: var(--secondary-color);
+    box-shadow: 0px 0px 10px #000;
+    transform: translateY(-3px);
+}
+
+.message{
+    border: 2px solid black;
+}
+
+@media (max-width: 975px){
+    footer .footer{
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 700px){
+    .navbar1{
+        display: none;
+    }
+
+    body{
+        position: relative;
+    }
+
+    .navbar2{
+        position: sticky;
+        top: 0px;
+        height: 80px;
+        width: 100%;
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        background-color: rgb(0,174,173);
+    }
+
+    .navbar2 .ham p{
+        font-size: 30px;
+        cursor: pointer;
+        color: var(--primary-color);
+        transition: 0.3s ease-in-out;
+    }
+
+    .navbar2 .ham p:hover{
+        color: #fff;
+    }
+
+    .navbar2 .title span{
+        color: var(--secondary-color);
+        margin:0px 10px;
+    }
+    
+    .navbar2 .title{
+        font-size: 20px;
+        color: #fff;
+        font-weight: 400;
+        cursor: pointer;
+    }
+
+    .navbar2 .title a{
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .side-bar{
+        display: block;
+        left: -100%;
+        position:fixed;
+        padding: 20px;
+        top: 0;
+        background-color:rgb(0,174,173);
+        width: 50%;
+        text-align: center;
+        height: 100%;
+    }
+
+    .side-bar ul{
+        margin-top: 10vh;
+    }
+    
+    .side-bar ul li{
+        list-style-type: none;
+    }
+    
+    .side-bar ul li a{
+        text-decoration: none;
+        color: #000;
+        height: 100px;
+        line-height: 10vh;
+        font-size: 25px;
+        position: relative;
+        font-weight: 500;
+    }
+    
+    .side-bar ul li a:hover{
+        color: var(--secondary-color);
+    }
+    
+    .side-bar ul li a:hover::after{
+        content: '';
+        position: absolute;
+        width: 0%;
+        left: 5%;
+        bottom: -5px;
+        height: 3px;
+        background-color: var(--secondary-color);
+        border-radius: 10px;
+        animation: anim  0.3s linear forwards;
+    }
+    
+    @keyframes anim{
+        0%{
+            width: 0%;
+        }
+        100%{
+            width: 90%;
+        }
+    }
+    
+    .show-side{
+        left: 0%;
+        animation: anima 0.3s linear forwards;
+    }
+    
+    @keyframes anima{
+        0%{
+            left: -100%;
+        }
+        25%{
+            left: -75%;
+        }
+        50%{
+            left: -50%;
+        }
+        75%{
+            left: -25%;
+        }
+        100%{
+            left: 0%;
+        }
+    }
+    
+    #close{
+        margin-right: 10px;
+        text-align: right;
+        font-size: 30px;
+        color: #000;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+    }
+    
+    #close:hover{
+        color: var(--secondary-color);
+    }
+    
+}
+
+.message{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border: 0px solid black !important;
+    font-family: 'Ubuntu', cursive !important;
+    font-size: 30px;
+    color: rgb(24,188,156);
+    text-shadow: 0px 0px 1px black;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 5px;
+    border-radius: 30px;
+    box-shadow: 0px 3px rgb(24,188,156);
+}
