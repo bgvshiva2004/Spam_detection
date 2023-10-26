@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <script src="https://kit.fontawesome.com/0ceeca1f1f.js" crossorigin="anonymous"></script>
+    <title>Spam Detection</title>
+</head>
+<body>
+    <div class="navbar1">
+        <div class="title">
+            <h3><span><i class="fa-solid fa-magnifying-glass"></i></span>InboxDefender.io</h3>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="{% url "index" %}">Home</a></li>
+                <li><a href="{% url "login" %}">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="navbar2">
+        <div class="ham">
+          <p><i class="fa-solid fa-bars"></i></p>
+        </div>
+        <div class="title">
+          <a href="index.html"><h3><span><i class="fa-solid fa-magnifying-glass"></i></span>InboxDefender.io</h3></a>
+        </div>
+      </div>
+      <div class="side-bar">
+        <div id="close"><i class="fa-solid fa-xmark"></i></div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">Login</a></li>
+        </ul>
+      </div>
+
+      <section>
+        <div class="content">
+          <h2>Email Reputation Checker</h2>
+          <p>This service helps you detect potentialy malicious emails.</p>
+          <h6>Check the online reputation/safety of an email!</h6>
+          <form action="" method="post">
+            {% csrf_token %}
+            <textarea name="text" placeholder="Email content here!"></textarea>
+            <button type="submit">Scan Email</button> 
+          </form>
+        </div>
+      </section>
+      <div class="message" >
+            {{category}}
+       </div>
+
+      <footer>
+        <div class="footer">
+          <div class="info">
+            <h4>InboxDefender.io</h4>
+          </div>
+          <div class="social">
+            <ul>
+              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            </ul>
+          </div>
+          <div class="rights">
+            <p><i class="fa-solid fa-copyright"></i> Copyrights reserved.</p>
+          </div>
+        </div>
+        
+      </footer>
+
+      <script>
+        var side_bar = document.querySelector(".side-bar");
+        var ham = document.querySelector(".ham p");
+        var closes = document.getElementById("close");
+
+        ham.addEventListener("click", ()=>{
+            side_bar.classList.toggle("show-side");
+        });
+
+        closes.addEventListener("click", ()=>{
+          side_bar.classList.toggle("show-side");
+        });
+      </script>
+</body>
+</html>

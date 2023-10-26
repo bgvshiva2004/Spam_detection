@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400;500;600;700&family=Lato:wght@300;400&family=Poppins:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', cursive;
+    font-weight: 400;
+}
+
+:root{
+    --primary-color:#000;
+    --secondary-color: rgb(24,188,156);
+}
+
+.form{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.form form{
+    color: #fff;
+    height: fit-content;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px var(--primary-color);
+    width: 300px;
+}
+
+.form form div{
+    margin: 20px 0px;
+}
+
+form label{
+    margin-right: 30px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 20px;
+    color: var(--secondary-color);
+}
+
+form input{
+    border: 0;
+    outline: 0;
+    background: transparent;
+    height: 30px;
+    font-size: 16px;
+    border-bottom: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    line-height: 40px;
+}
+
+form h4{
+    text-align: center; 
+    color: var(--secondary-color);
+    font-weight: 900;
+}
+
+#contactPassword, #registerPassword{
+    width: 85%;
+}
+
+#show{
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: -5px;
+}
+
+#contactSubmit, #registerSubmit{
+    margin: 40px auto 20px;
+    display: block;
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    background-color: rgb(0,174,173);
+    box-shadow: 0px 0px 10px rgb(0,174,173);
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+#contactSubmit:hover, #registerSubmit:hover{
+    background-color: var(--secondary-color);
+    box-shadow: 0px 0px 20px var(--secondary-color);
+}
+
+.student-register:hover, .student-login:hover{
+    color: var(--secondary-color);
+}
+
+#register{
+    display: none;
+    margin-bottom: 40px;
+}
+
+#login{
+    margin-bottom: 150px;
+}
+.student-register{
+    text-decoration: none;
+}
+.student-login{
+    text-decoration: none;
+}

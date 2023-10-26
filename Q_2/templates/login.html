@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "login.css" %}">
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/0ceeca1f1f.js" crossorigin="anonymous"></script>
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="navbar1">
+        <div class="title">
+            <h3><span><i class="fa-solid fa-magnifying-glass"></i></span>InboxDefender.io</h3>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="{% url "index" %}">Home</a></li>
+                <li><a href="{% url "login" %}">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="navbar2">
+        <div class="ham">
+          <p><i class="fa-solid fa-bars"></i></p>
+        </div>
+        <div class="title">
+          <a href="index.html"><h3><span><i class="fa-solid fa-magnifying-glass"></i></span>InboxDefender.io</h3></a>
+        </div>
+      </div>
+      <div class="side-bar">
+        <div id="close"><i class="fa-solid fa-xmark"></i></div>
+        <ul>
+          <li><a href="{% url "index" %}">Home</a></li>
+          <li><a href="{% url "login" %}">Login</a></li>
+        </ul>
+      </div>
+
+        <div class="form" id="login">
+            <form>
+                <h4>Student Login</h4>
+                <div>
+                    <label for="id">User ID</label>
+                    <input type="text" placeholder="UserID" id="contactID">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Password" id="contactPassword">
+                    <span onclick="toggleShow1();" class="span1" id="show"><i class="fa-solid fa-eye-slash"></i></span>
+                </div>
+                <button type="submit" id="contactSubmit">Submit</button>
+                <div style="text-align: center; margin-bottom: -10px;">
+                    <a href="#" class="student-register" onclick="Register();">Still Not Registered?</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="form" id="register">
+            <form action="/" method="post">
+                <h4>Register here!</h4>
+                <div>
+                    <label for="yourID">User ID</label>
+                    <input type="text" name="userID" placeholder="Your Name" id="yourName">
+                </div>
+                <div>
+                    <label for="mobile-number">Mobile Number</label>
+                    <input type="text" placeholder="Mobile No." id="yourMobile">
+                </div>
+                <div>
+                    <label for="registerPassword">Password</label>
+                    <input type="password" name="password" placeholder="Password" id="registerPassword">
+                    <span onclick="toggleShow2();" class="span2" id="show"><i class="fa-solid fa-eye-slash"></i></span>
+                </div>
+                <button type="submit" id="registerSubmit">Submit</button>
+                <div style="text-align: center; margin-bottom: -10px;">
+                    <a href="#" class="student-login" onclick="Login();">Already Registered?</a>
+                </div>
+            </form>
+        </div>
+    
+
+        <footer>
+            <div class="footer">
+              <div class="info">
+                <h4>InboxDefender.io</h4>
+              </div>
+              <div class="social">
+                <ul>
+                  <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                </ul>
+              </div>
+              <div class="rights">
+                <p><i class="fa-solid fa-copyright"></i> Copyrights reserved.</p>
+              </div>
+            </div>
+            
+          </footer>
+  
+    
+    <script>
+       
+        var password1 = document.getElementById("contactPassword");
+        var password2 = document.getElementById("registerPassword");
+        var span1 = document.querySelector(".span1");
+        var span2 = document.querySelector(".span2");
+        function toggleShow1(){
+            if (password1.type === "password") {
+                password1.setAttribute('type', 'text');
+                span1.innerHTML = "<i class='fa-solid fa-eye'></i>";
+                span1.style.color = "rgb(24,188,156)";
+            }
+            else{
+                password1.setAttribute('type','password') ;
+                span1.innerHTML = "<i class='fa-solid fa-eye-slash'></i>";
+                span1.style.color = "black";
+            }
+        }
+
+        function toggleShow2(){
+            if (password2.type === "password") {
+                password2.setAttribute('type', 'text');
+                span2.innerHTML = "<i class='fa-solid fa-eye'></i>";
+                span2.style.color = "rgb(24,188,156)";
+            }
+            else{
+                password2.setAttribute('type','password') ;
+                span2.innerHTML = "<i class='fa-solid fa-eye-slash'></i>";
+                span2.style.color = "black";
+            }
+        }
+
+        var login = document.getElementById("login");
+        var register = document.getElementById("register");
+        function Login(){
+            login.style.display = "flex";
+            register.style.display = "none";
+        }
+        function Register(){
+            login.style.display = "none";
+            register.style.display = "flex";
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
